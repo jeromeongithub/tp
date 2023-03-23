@@ -16,12 +16,12 @@ import java.io.ObjectOutputStream;
  */
 public class Storage {
     public static final String DEFAULT_SAVE_PATH = "./data.txt";
-
     private boolean isNewSave;
     private File file;
 
-    public Storage() {
-        file = new File(DEFAULT_SAVE_PATH);
+    public Storage(String filepath) {
+        assert filepath != null : "NULL filepath was given";
+        file = new File(filepath);
         isNewSave = !file.exists();
     }
 

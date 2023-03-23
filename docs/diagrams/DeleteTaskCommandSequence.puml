@@ -1,0 +1,68 @@
+@startuml
+
+autonumber
+hide footbox
+title Sequence Diagram for DeleteTaskCommand
+
+actor User
+
+box Logic
+participant ":ToDoListManager" as ToDoListManager
+participant ":Parser" as Parser
+participant ":DeleteTaskCommand" as DeleteTaskCommand
+end box
+box Model
+participant ":exception" as exception
+participant ":TaskList" as TaskList
+participant ":Ui" as Ui
+participant ":Storage" as Storage
+end box
+
+User -> ToDoListManager: input("delete <index>")
+activate ToDoListManager
+ToDoListManager -> Parser : parseCommand("delete <index>")
+activate Parser
+create DeleteTaskCommand
+Parser -> DeleteTaskCommand
+activate DeleteTaskCommand
+DeleteTaskCommand --> Parser : HashMap
+deactivate DeleteTaskCommand
+Parser -> DeleteTaskCommand : parse("<index>")
+activate DeleteTaskCommand
+opt  index <= 0 || index > TaskList.size()
+   DeleteTaskCommand --> exception : throw InvalidIndexException
+   activate exception
+   deactivate exception
+end
+destroy exception
+DeleteTaskCommand --> Parser
+deactivate DeleteTaskCommand
+Parser --> ToDoListManager : command
+deactivate Parser
+ToDoListManager -> DeleteTaskCommand : execute(taskList, ui)
+activate DeleteTaskCommand
+DeleteTaskCommand -> TaskList: deleteTask(<index>)
+activate TaskList
+TaskList --> DeleteTaskCommand
+deactivate TaskList
+DeleteTaskCommand -> Ui : printDeleteTaskMessage(taskString)
+activate Ui
+Ui --> DeleteTaskCommand
+deactivate Ui
+DeleteTaskCommand --> ToDoListManager : result
+ToDoListManager --> User : Notify user task has been deleted
+deactivate DeleteTaskCommand
+destroy DeleteTaskCommand
+ToDoListManager ->Storage : saveData(taskList)
+activate Storage
+opt  fail to save updated task list
+   Storage --> exception : throw FailedSaveException
+   activate exception
+   deactivate exception
+end
+destroy exception
+Storage -> Storage : updates data
+Storage --> ToDoListManager
+deactivate Storage
+
+@enduml

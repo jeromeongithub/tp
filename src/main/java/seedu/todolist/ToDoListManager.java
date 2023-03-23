@@ -11,7 +11,7 @@ import seedu.todolist.ui.Ui;
 public class ToDoListManager {
     private boolean isRunning = true;
     private Parser parser = new Parser();
-    private Storage storage = new Storage();
+    private Storage storage = new Storage(Storage.DEFAULT_SAVE_PATH);
     private TaskList taskList = new TaskList();
     private Ui ui = new Ui();
 

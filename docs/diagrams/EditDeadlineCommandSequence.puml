@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title Sequence Diagram for EditDeadlineCommand
+
+actor User
+
+box Logic
+participant ":ToDoListManager" as ToDoListManager
+participant ":Parser" as Parser
+participant ":EditDeadlineCommand" as EditDeadlineCommand
+end box
+
+box Model
+participant ":TaskList" as TaskList
+participant ":Task" as Task
+participant ":Ui" as Ui
+
+User -> ToDoListManager: input("edit <index> -due <deadline>")
+ToDoListManager -> Parser: parseCommand(inputCommand)
+Parser -> EditDeadlineCommand: new EditDeadlineCommand(getArguments(splitInput, EditDeadlineCommand.FLAGS)
+EditDeadlineCommand -> Parser: formatDateTime(args.get(Flags.DEADLINE.FLAG))
+Parser --> EditDeadlineCommand: LocalDateTime.parse(date, inputFormatter)
+ToDoListManager -> EditDeadlineCommand: execute(taskList, ui)
+EditDeadlineCommand -> TaskList: editDeadline(index, deadline)
+TaskList -> TaskList:ArrayList: get(index)
+TaskList -> Task: setDeadline(deadline)
+Task --> TaskList: toString()
+TaskList -> Ui: printEditTaskMessage(taskString)
+@enduml

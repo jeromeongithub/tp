@@ -1,0 +1,67 @@
+@startuml
+autonumber
+hide footbox
+title Sequence Diagram for Mark/UnmarkTaskCommand
+
+actor User
+
+box Logic
+participant ":ToDoListManager" as ToDoListManager
+participant ":Parser" as Parser
+participant ":Mark/UnmarkTaskCommand" as MarkTaskCommand
+end box
+box Model
+participant ":exception" as exception
+participant ":TaskList" as TaskList
+participant ":Ui" as Ui
+participant ":Storage" as Storage
+end box
+
+User -> ToDoListManager: input("mark <index>")
+activate ToDoListManager
+ToDoListManager -> Parser : parseCommand("mark <index>")
+activate Parser
+create MarkTaskCommand
+Parser -> MarkTaskCommand
+activate MarkTaskCommand
+MarkTaskCommand -> Parser : HashMap
+deactivate MarkTaskCommand
+Parser -> MarkTaskCommand : parse("<index>")
+activate MarkTaskCommand
+opt  index <= 0 || index > TaskList.size()
+   MarkTaskCommand -> exception : throw InvalidIndexException
+   activate exception
+   deactivate exception
+end
+destroy exception
+MarkTaskCommand --> Parser
+deactivate MarkTaskCommand
+Parser --> ToDoListManager : command
+deactivate Parser
+ToDoListManager -> MarkTaskCommand : execute(taskList, ui)
+activate MarkTaskCommand
+MarkTaskCommand -> TaskList: setDone(<index>, isDone)
+activate TaskList
+TaskList --> MarkTaskCommand
+deactivate TaskList
+MarkTaskCommand -> Ui : print Mark/UnmarkTaskMessage(taskString)
+activate Ui
+Ui --> MarkTaskCommand
+deactivate Ui
+MarkTaskCommand --> ToDoListManager : result
+ToDoListManager --> User : Notify user task has been marked/unmarked
+deactivate MarkTaskCommand
+destroy MarkTaskCommand
+ToDoListManager ->Storage : saveData(taskList)
+activate Storage
+opt  fail to save updated task list
+   Storage -> exception : throw FailedSaveException
+   activate exception
+   deactivate exception
+end
+destroy exception
+Storage -> Storage : updates data
+Storage --> ToDoListManager
+deactivate Storage
+
+@enduml

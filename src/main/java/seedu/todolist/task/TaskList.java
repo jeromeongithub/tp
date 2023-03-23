@@ -42,7 +42,7 @@ public class TaskList implements Serializable {
      *              Must be between 1 and the size of the task list.
      * @return The task at the given index of the task list.
      */
-    Task getTask(int index) throws InvalidIndexException {
+    public Task getTask(int index) throws InvalidIndexException {
         if (index < 0 || index > tasks.size() - 1) {
             throw new InvalidIndexException();
         }
