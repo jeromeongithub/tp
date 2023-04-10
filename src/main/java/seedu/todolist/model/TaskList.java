@@ -423,7 +423,7 @@ public class TaskList {
      * @return If this task list is still valid.
      */
     public boolean isValid() {
-        if (tasks.lastKey() > allocatedIds) {
+        if (!tasks.isEmpty() && tasks.lastKey() > allocatedIds) {
             // Cannot have id larger than number of allocated ids
             return false;
         }

@@ -151,10 +151,6 @@ public class Task {
         return id;
     }
 
-    public boolean isDone() {
-        return isDone;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -203,7 +199,7 @@ public class Task {
     }
 
     public String setRepeatTimes(int newRepeatTimes) {
-        this.repeatTimes = newRepeatTimes;
+        repeatTimes = newRepeatTimes;
         return toString();
     }
 
@@ -217,11 +213,23 @@ public class Task {
         return toString();
     }
 
+    /**
+     * Adds the tags requested by the user to this task.
+     *
+     * @param tags The set containing the tags that the user wants to add to this task.
+     * @return The summarised string representation of this task.
+     */
     public String addTags(TreeSet<String> tags) {
         this.tags.addAll(tags);
         return toString();
     }
 
+    /**
+     * Removes the tags requested by the user from this task.
+     *
+     * @param tags The set containing the tags that the user wants to remove from this task.
+     * @return The summarised string representation of this task.
+     */
     public String removeTags(TreeSet<String> tags) {
         this.tags.removeAll(tags);
         return toString();

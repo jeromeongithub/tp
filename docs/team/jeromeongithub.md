@@ -13,7 +13,7 @@ Given below are my contributions to the project.
 recording them in the first place.
 
 
-- **New Feature**: Provide storage functionality using GSON library.
+- **New Feature**: Provided storage functionality using GSON library.
     - What it does: The user's To-Do list is saved as a `.json` file after every command executed by the user. The saved 
 file is loaded whenever the user uses the program again.
     - Justification: This feature is essential to the program as the task list would only be useful for the user if it 
@@ -31,15 +31,24 @@ their tasks that are due within the current week. This is especially useful if t
 wants to see the tasks that are due very soon (in the current week), rather than listing out more tasks and having to 
 double-check which are the ones that are due in the current week.
 
+-  **New Feature**: Changed the commands dealing with task id to handle multiple ids instead of a single id only.
+    - What it does: Commands such as the delete command can be done on multiple ids at once, instead of having to be 
+selected 1 by 1.
+    - Justification: During the PE Dry Run, our team obtained feedback that it was very troublesome to delete tasks 1 by
+1 and that a mass delete option would be very useful to reduce the effort required to delete many tasks.
+
+- **New Feature**: Changed the edit tags command so that there was the option of selective deletion of tags instead of
+having the option to delete all tags only.
+  - What it does: Users can specify task ids and the particular tags to they want to delete from those tasks.
+  - Justification: During the PE Dry Run, our team obtained feedback that it was very inconvenient to remove specific 
+tags as the only way to do so was by using the edit tags command and re-listing all the tags that the user wanted to 
+have. The feedback suggested that an option to delete specific tags would make the program much more convenient to use.
+
 #### Code Contributed:
 - [RepoSense Link](https://nus-cs2113-ay2223s2.github.io/tp-dashboard/?search=jeromeongithub&breakdown=true&sort=groupTitle%20dsc&sortWithin=title&since=2023-02-17&timeframe=commit&mergegroup=&groupSelect=groupByRepos&checkedFileTypes=docs~functional-code~test-code~other)
 
 #### Enhancements Implemented:
 - Wrote JUnit tests for the Storage class.
-- Changed the commands dealing with task id to be handle multiple ids at once so that the program became more convenient
-for users (based on feedback obtained during PE Dry Run).
-- Changed the edit tags command to be a selective deletion of tags rather than a deletion of all existing tags so that 
-the program was more convenient for users (based on feedback obtaind during PE Dry Run).
 
 #### Contributions to the UG:
 - Contributed to the `Features` section.

@@ -6,14 +6,16 @@ package "\t\t\t\t\t\tUi" as UiPackage <<Rectangle>> {
     class Ui COLOR_UI {
         +close()
         +getUserInput()
-        +println()
+        +println(strings: Strings...)
+        +printSpecificMessage()
     }
     class Scanner COLOR_UI
 }
 class ToDoListManager COLOR_MAIN
 class ABCCommand COLOR_LOGIC
 
-note right of ABCCommand: AddTaskCommand,\nListTagsCommand,\nEditEmailCommand etc
+note right of ABCCommand: AddTaskCommand,\nListTagsCommand,\nEditEmailCommand etc...
+note bottom of Ui: printWelcomeMessage(),\nprintTaskList(), etc... call\nprintln() with the Strings\nto be displayed
 
 Ui -> "1" Scanner
 ToDoListManager -> "\t\t\t\t1" Ui

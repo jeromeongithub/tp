@@ -44,6 +44,6 @@ public class ProgressBarCommand extends Command {
         int tasksThisWeek = taskList.size(isInThisWeek);
         int completedTasksThisWeek = taskList.size(isInThisWeek.and(Task.isDonePredicate()));
         ui.printProgressBar(completedTasksThisWeek, tasksThisWeek,
-                PROGRESS_BAR_SECTIONS, taskList.toString(isInThisWeek));
+                PROGRESS_BAR_SECTIONS, taskList.toString(isInThisWeek, Task.deadlineComparator));
     }
 }

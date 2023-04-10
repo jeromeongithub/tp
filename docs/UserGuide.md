@@ -104,6 +104,8 @@ Okay, I have added this task:
 [ID:00002][ ][II ][do math homework                   ]
 ```
 
+<!-- @@author RuiShengGit -->
+
 ### Mark a task (as complete) `mark`
 
 Marks tasks with the given ids or matching the given filters as completed.
@@ -173,6 +175,8 @@ ________________________________________________________________________________
 [#00001][ID:00001][ ][   ][todo                               ][Due by: 23 Sep 2023 23:59]
 ```
 
+<!-- @@author ERJUNZE -->
+
 ###  Edit description of a task `desc`
 
 Edits the description of tasks with the given ids or matching the given filters.
@@ -190,6 +194,8 @@ Okay, I have edited the description of the following task(s) to [abc def]:
 __________________________________________________________________________________________
 [#00001][ID:00001][ ][   ][abc def                            ][Due by: 23 Sep 2023 23:59]
 ```
+
+<!-- @@author clement559 -->
 
 ### Edit/delete deadline `due`
 
@@ -211,6 +217,8 @@ ________________________________________________________________________________
 [#00001][ID:00001][ ][   ][abc def                            ][Due by: 30 Mar 2024 18:00]
 ```
 
+<!-- @@author RuiShengGit -->
+
 ### Edit/Delete email address `email`
 
 Edits or deletes the email address of tasks with the given ids or matching the given filters.
@@ -229,6 +237,8 @@ Okay, I have edited the email of the following task(s) to [rui@gmail.com]:
 __________________________________________________________________________________________
 [#00001][ID:00001][ ][   ][abc def                            ][Due by: 30 Mar 2024 18:00]
 ```
+
+<!-- @@author ERJUNZE -->
 
 ### Add/Edit/Delete tags `tags`
 
@@ -257,6 +267,8 @@ Okay, I have removed the tags [later] from the following task(s):
 [#00002][ID:00002][ ][   ][do math homework                   ]
 ```
 
+<!-- @@author clement559 -->
+
 ### Edit/delete repeat times `rep`
 
 Edits or deletes the recurrence count of tasks with the given ids or matching the given filters.
@@ -283,6 +295,8 @@ ________________________________________________________________________________
 [#00001][ID:00001][ ][   ][abc def                            ][Due by: 30 Mar 2024 18:00]
 ```
 
+<!-- @@author RuiShengGit -->
+
 ###  Edit/Delete priority level `prio`
 
 Edits or deletes the priority level of tasks with the given ids or matching the given filters.
@@ -308,6 +322,8 @@ Okay, I have deleted the priority level of the following task(s):
 __________________________________________________________________________________________
 [#00001][ID:00002][ ][   ][do math homework                   ]
 ```
+
+<!-- @@author KedrianLoh -->
 
 ### View all/selected tasks in To-Do list `list`
 
@@ -382,6 +398,8 @@ Due:          08 Apr 2023 20:00
 Repeat times: 12
 ```
 
+<!-- @@author ERJUNZE -->
+
 ### View all tags in task list `taglist`
 
 Displays all tags found in your To-Do List.
@@ -395,6 +413,8 @@ Example of usage and output:
 Okay, here are the tags associated with your task list:
 3.14, can, difficult, haha, okay, yeah
 ```
+
+<!-- @@author jeromeongithub -->
 
 ### Show progress of tasks that are due this week `progress`
 
@@ -419,6 +439,8 @@ ________________________________________________________________________________
 [#00002][ID:00002][ ][III][task2                              ][Due by: 30 Mar 2023 19:00]
 [#00003][ID:00003][ ][III][task3                              ][Due by: 31 Mar 2023 20:00]
 ```
+
+<!-- @@author clement559 -->
 
 ### View/Edit configurable settings `config`
 
@@ -447,6 +469,8 @@ Okay, I have changed the configuration to as follows:
 Repeating tasks every 3 days
 Checking for repeating task every: 5 minutes
 ```
+
+<!-- @@author RuiShengGit -->
 
 ### View help List `help`
 
@@ -558,6 +582,8 @@ This cannot be undone. Enter "YES" to confirm, or anything else to cancel:
 ```
 Okay, your To-Do List has been reset.
 ```
+
+<!-- @@author jeromeongithub -->
 
 ## FAQ
 

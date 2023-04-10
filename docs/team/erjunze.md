@@ -11,8 +11,13 @@ Given below are my contributions to the project.
 
 - **New Feature**: Created the `Parser` and `ParserUtil` classes for parsing commands from the user.
   - What it does: Parses user input into the respective commands and their parameters.
-  - Justification: This feature is essential to the program as it allows the program to understand what the user wants
-    it to do.
+  - Justification: This feature is essential to the program as it made it easier to add new commands to the program,
+    which was necessary as new features likely require new commands to use.
+
+- **New Feature**: Grouped the code into components, like the `Model`, `Logic`, and `Ui` components.
+  - What it does: Improves the project's structure to be more in line with OOP principles.
+  - Justification: This feature is essential to the program as it made it easier to extend the codebase and implement
+    more features, without the code becoming too messy. 
 
 - **New Feature**: Created a tag system for users to add tags, in the form of strings, to their tasks.
   - What it does: Allows users to add, edit and remove tags from their tasks using the `tags` command. Users can also
@@ -22,9 +27,14 @@ Given below are my contributions to the project.
     tags, or target certain tasks with commands depending on the tags they have. For example, students can add module
     codes to tasks as a tag, so they can easily find all tasks in their task list that are related to that module later.
 
-- **New Feature**: Increase flexibility of task selection in multiple commands, not just the `list` command.
-  - What it does: Allows users to select more than one task to target with a command. Users can specify multiple task
-    ids instead of just a single id, or use filters to target all tasks fulfilling certain conditions.
+- **New Feature**: Created a command for editing the description of tasks.
+  - What it does: Allows users to edit the description of existing tasks.
+  - Justification: This feature is useful to the program as users can update the descriptions of tasks if they want to
+    do so for reasons such as to more accurately reflect what the task is about.
+
+- **New Feature**: Extended filters out of the `list` command to task selection in multiple commands.
+  - What it does: Allows users to select more than one task to target with a command. Users can use filters to target
+    all tasks fulfilling certain conditions.
   - Justification: This feature is useful to the program as it affords more flexibility to users when it comes to
     manipulating their task list. Users do not have to individually target tasks, which will require as many commands
     as tasks they want to edit/delete, and can instead mass edit/delete tasks.
@@ -36,18 +46,17 @@ Given below are my contributions to the project.
 ### Enhancements Implemented:
 
 - Wrote some JUnit tests for the `ParserUtil` class.
-- Organized code to reduce coupling and be more in line with OOP principles.
 
 ### Contributions to the UG:
 
-- Contributed to the `Command format` section.
+- Wrote the `Command format` section.
 - Contributed to the `Add task`, `Edit description`, `Edit tags`, and `View all tags` components in the `Features` section.
 
 ### Contributions to the DG:
 
-- Added architecture diagram and described the overall project structure.
+- Added architecture diagram and provided a high-level overview of the project's structure.
 - Added component class diagrams and described briefly how each component functions.
-- Formatted the colour scheme and other style attributes across all the diagrams.
+- Wrote the glossary and manual testing section.
 
 ### Contributions to team-based tasks:
 

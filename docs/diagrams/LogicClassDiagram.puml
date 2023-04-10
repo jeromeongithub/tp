@@ -11,8 +11,10 @@ class FormatterUtil COLOR_LOGIC
 }
 class ToDoListManager COLOR_MAIN
 class Ui COLOR_UI
+package "\t\t\t\tModel" <<Rectangle>> {
 class TaskList COLOR_TASK_LIST
 class Config COLOR_TASK_LIST
+}
 
 note top of ABCCommand: AddTaskCommand,\nListTagsCommand,\nEditEmailCommand etc
 

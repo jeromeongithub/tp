@@ -217,7 +217,7 @@ public class ParserUtil {
      * Parses the frequency to be set in the config.
      *
      * @param frequencyString The frequency, as a string.
-     * @return The frequency, as an integer, if it was not null, null otherwise.
+     * @return The frequency, as an integer, if it was not null, -1 otherwise.
      * @throws InvalidFrequencyException If the priority cannot be parsed to an integer.
      */
     public static int parseFrequency(String frequencyString, int minAllowed) throws InvalidFrequencyException {

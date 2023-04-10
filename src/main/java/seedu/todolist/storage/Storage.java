@@ -77,8 +77,8 @@ public class Storage {
     /**
      * Loads the task list from the local save file.
      *
-     * @return The loaded task list.
-     * @throws FileNotFoundException If no saved task list was found.
+     * @return The loaded task list if it is not empty. Otherwise, a newly created task list is returned.
+     * @throws FileNotFoundException If no saved file was found.
      * @throws FailedLoadDataException If the task list could not be loaded because the save file is invalid.
      */
     public TaskList loadData() throws FileNotFoundException, FailedLoadDataException {
@@ -104,6 +104,7 @@ public class Storage {
     }
 
     //@@author clement559
+
     /**
      * Loads the configuration settings from the local config file.
      *

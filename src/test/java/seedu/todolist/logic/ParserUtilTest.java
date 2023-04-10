@@ -6,7 +6,9 @@ import seedu.todolist.exception.InvalidDateException;
 import seedu.todolist.exception.InvalidDurationException;
 import seedu.todolist.exception.InvalidEmailFormatException;
 import seedu.todolist.exception.InvalidIdException;
+import seedu.todolist.exception.InvalidPriorityException;
 import seedu.todolist.exception.PassedDateException;
+import seedu.todolist.model.Priority;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -108,6 +110,28 @@ class ParserUtilTest {
         for (int validDuration : validDurations) {
             assertThrows(InvalidDateException.class,
                     () -> ParserUtil.parseRepeatTimes(Integer.toString(validDuration), null));
+        }
+    }
+
+    @Test
+    void parsePriorityTest() {
+        // Invalid priority levels should throw an exception
+        final String[] invalidPriorities = {"4", "1.2", "hello", "?]|"};
+        for (String invalidPriority : invalidPriorities) {
+            assertThrows(InvalidPriorityException.class, () -> ParserUtil.parsePriority(invalidPriority));
+        }
+
+        try {
+            // No priority provided gets converted to priority level None
+            assertEquals(ParserUtil.parsePriority(null), Priority.NONE);
+
+            // Valid priority levels get parsed successfully
+            assertEquals(ParserUtil.parsePriority("0"), Priority.NONE);
+            assertEquals(ParserUtil.parsePriority("1"), Priority.LOW);
+            assertEquals(ParserUtil.parsePriority("2"), Priority.MEDIUM);
+            assertEquals(ParserUtil.parsePriority("3"), Priority.HIGH);
+        } catch (InvalidPriorityException e) {
+            fail("Valid priority level was not successfully parsed.");
         }
     }
 }
