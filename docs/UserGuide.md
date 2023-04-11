@@ -11,8 +11,8 @@ bring an application to keep you aware of your deadlines and not miss them.
 ## Quick Start
 
 1. Ensure that you have Java 11 or above installed.
-2. Download the latest version of `NUS To-Do List` from [here](https://github.com/AY2223S2-CS2113-T11-4/tp/releases/tag/v2.0).
-3. Double-click the downloaded jar file or run `java -jar todolist.jar` in a terminal to start the program.
+2. Download the latest version of `NUS To-Do List` from [here](https://github.com/AY2223S2-CS2113-T11-4/tp/releases/tag/v2.1).
+3. Run `java -jar NUSTo-DoList.jar` in a terminal to start the program.
 
 ## Command Format
 

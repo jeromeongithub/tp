@@ -13,7 +13,7 @@ Adapted from [AddressBook Level 3 Developer Guide](https://se-education.org/addr
 
 ### Setting up the project on your computer
 
-First, **fork** this repo, and **clone** the fork into your computer.
+First, **fork** [this repo](https://github.com/AY2223S2-CS2113-T11-4/tp.git), and **clone** the fork into your computer.
 
 If you plan to use Intellij IDEA (highly recommended):
 1. **Configure the JDK**: Follow the guide [_[se-edu/guides] IDEA: Configuring the JDK_](https://se-education.org/guides/tutorials/intellijJdk.html) to ensure Intellij is configured to use **JDK 11**.
@@ -441,7 +441,7 @@ able to accomplish most of the tasks faster using commands than using the mouse.
 
 The following are instructions on how to test the program manually.
 
-- After downloading the jar file from [here](https://github.com/AY2223S2-CS2113-T11-4/tp/releases/tag/v2.0), run it in a terminal to start the program.
+- After downloading the jar file from [here](https://github.com/AY2223S2-CS2113-T11-4/tp/releases/tag/v2.1), run it in a terminal to start the program.
   - Test case: `java -jar NUSTo-DoList.jar`
   - Expected: The startup and save loading messages will be displayed in the terminal.
 - Try running some commands - use the command `help` or refer to the [User Guide](https://ay2223s2-cs2113-t11-4.github.io/tp/UserGuide.html) for a list of commands.
